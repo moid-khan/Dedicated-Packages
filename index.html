@@ -1,0 +1,4492 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <meta charset="UTF-8" />
+    <script>
+      var gform;
+      gform ||
+        (document.addEventListener("gform_main_scripts_loaded", function () {
+          gform.scriptsLoaded = !0;
+        }),
+        window.addEventListener("DOMContentLoaded", function () {
+          gform.domLoaded = !0;
+        }),
+        (gform = {
+          domLoaded: !1,
+          scriptsLoaded: !1,
+          initializeOnLoaded: function (o) {
+            gform.domLoaded && gform.scriptsLoaded
+              ? o()
+              : !gform.domLoaded && gform.scriptsLoaded
+              ? window.addEventListener("DOMContentLoaded", o)
+              : document.addEventListener("gform_main_scripts_loaded", o);
+          },
+          hooks: { action: {}, filter: {} },
+          addAction: function (o, n, r, t) {
+            gform.addHook("action", o, n, r, t);
+          },
+          addFilter: function (o, n, r, t) {
+            gform.addHook("filter", o, n, r, t);
+          },
+          doAction: function (o) {
+            gform.doHook("action", o, arguments);
+          },
+          applyFilters: function (o) {
+            return gform.doHook("filter", o, arguments);
+          },
+          removeAction: function (o, n) {
+            gform.removeHook("action", o, n);
+          },
+          removeFilter: function (o, n, r) {
+            gform.removeHook("filter", o, n, r);
+          },
+          addHook: function (o, n, r, t, i) {
+            null == gform.hooks[o][n] && (gform.hooks[o][n] = []);
+            var e = gform.hooks[o][n];
+            null == i && (i = n + "_" + e.length),
+              gform.hooks[o][n].push({
+                tag: i,
+                callable: r,
+                priority: (t = null == t ? 10 : t),
+              });
+          },
+          doHook: function (n, o, r) {
+            var t;
+            if (
+              ((r = Array.prototype.slice.call(r, 1)),
+              null != gform.hooks[n][o] &&
+                ((o = gform.hooks[n][o]).sort(function (o, n) {
+                  return o.priority - n.priority;
+                }),
+                o.forEach(function (o) {
+                  "function" != typeof (t = o.callable) && (t = window[t]),
+                    "action" == n
+                      ? t.apply(null, r)
+                      : (r[0] = t.apply(null, r));
+                })),
+              "filter" == n)
+            )
+              return r[0];
+          },
+          removeHook: function (o, n, t, i) {
+            var r;
+            null != gform.hooks[o][n] &&
+              ((r = (r = gform.hooks[o][n]).filter(function (o, n, r) {
+                return !!(
+                  (null != i && i != o.tag) ||
+                  (null != t && t != o.priority)
+                );
+              })),
+              (gform.hooks[o][n] = r));
+          },
+        }));
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
+
+    <link
+      rel="preload"
+      href="https://www.e2msolutions.com/wp-content/themes/e2m/assets/fonts/WorkSans-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://www.e2msolutions.com/wp-content/themes/e2m/assets/fonts/WorkSans-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://www.e2msolutions.com/wp-content/themes/e2m/assets/fonts/WorkSans-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://www.e2msolutions.com/wp-content/themes/e2m/assets/fonts/WorkSans-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!--<title>kages</title>-->
+    <link rel="canonical" href="index.html" />
+
+    <link href="https://fonts.gstatic.com/" crossorigin rel="preconnect" />
+    <link
+      rel="stylesheet"
+      id="mpp_gutenberg-css"
+      href="../wp-content/plugins/metronet-profile-picture/dist/blocks.style.buildd315.css?ver=2.6.0"
+      media="all"
+    />
+
+    <link
+      rel="stylesheet"
+      id="e2m-fonts-css"
+      href="../wp-content/themes/e2m/assets/fonts/stylesheet5152.css?ver=1.0"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="e2m-style-css"
+      href="../wp-content/themes/e2m/style8a54.css?ver=1.0.0"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="jquery-ui-css-css"
+      href="../wp-content/themes/e2m/assets/css/jquery-ui37ad.css?ver=6.0.1"
+      media="all"
+    />
+    <style id="rocket-lazyload-inline-css">
+      .rll-youtube-player {
+        position: relative;
+        padding-bottom: 56.23%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+      }
+      .rll-youtube-player:focus-within {
+        outline: 2px solid currentColor;
+        outline-offset: 5px;
+      }
+      .rll-youtube-player iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        background: 0 0;
+      }
+      .rll-youtube-player img {
+        bottom: 0;
+        display: block;
+        left: 0;
+        margin: auto;
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        height: auto;
+        -webkit-transition: 0.4s all;
+        -moz-transition: 0.4s all;
+        transition: 0.4s all;
+      }
+      .rll-youtube-player img:hover {
+        -webkit-filter: brightness(75%);
+      }
+      .rll-youtube-player .play {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        background: url(../wp-content/plugins/wp-rocket/assets/img/youtube.png)
+          no-repeat center;
+        background-color: transparent !important;
+        cursor: pointer;
+        border: none;
+      }
+
+      .hire-remote-team .serBanner .content .title {
+        color: #000 !important;
+      }
+      .plan-list-tabs li .discount-text {
+        color: #000 !important;
+      }
+      .plan-card h4 {
+        color: #f3cc14 !important;
+      }
+      .check {
+        color: #000 !important;
+      }
+      .hire-r-how-work .features .block .text {
+        font-size: 1.5em !important;
+      }
+      .most-popular-plan {
+        background: linear-gradient(to right, #f3cc14, #ffa614) !important;
+      }
+      .plan-list-tabs li:hover a,
+      .plan-list-tabs li.active a {
+        background: linear-gradient(to right, #f3cc14, #ffa614) !important;
+      }
+      .best-plan-name {
+        background: #f3cc14 !important;
+      }
+      .best-plan thead tr:nth-child(2) th {
+        color: #000 !important;
+      }
+      .best-plan tfoot td a {
+        background: linear-gradient(to right, #f3cc14, #ffa614) !important;
+        padding: 0.8em 2em !important;
+      }
+      .plan-list-tabs li a:after {
+        border-color: #ffa614 transparent transparent transparent;
+      }
+      a {
+        color: #fff !important;
+      }
+      .best-plan th p {
+        color: #000 !important;
+      }
+      .best-plan thead tr:nth-child(2) th {
+        font-size: 2.9em !important;
+      }
+
+      .btn.orange {
+        background: linear-gradient(to right, #f3cc14, #ffa614) !important;
+      }
+      .best-plan td i,
+      .best-plan th i {
+        color: #f3cc14 !important;
+      }
+      .btn.orange:hover {
+        background: linear-gradient(to right, #ffa614, #f3cc14) !important;
+      }
+      .hello {
+        color: #ffa614 !important;
+      }
+      .best-plan-table th strong {
+        color: #f3cc14 !important;
+      }
+      #wl_pricing_packages .best-plan-name {
+        width: 60% !important;
+      }
+      .hire-r-how-work .block:nth-child(3) .inner:before {
+        background-image: url(../wp-content/uploads/2021/08/remote-team-how-does-work5.png);
+      }
+      @media only screen and (max-width: 960px) {
+        .plan-list-tabs li a {
+          color: #000 !important;
+        }
+        .expand-btn {
+          background: linear-gradient(to right, #ffa614, #f3cc14) !important;
+        }
+        .plan-card h2 {
+          color: #000 !important;
+        }
+        p.plan-card-mobile_numbers {
+          color: #000 !important;
+        }
+        .hire-r-how-work .features .block .text {
+          font-size: 16px !important;
+        }
+      }
+    </style>
+    <script
+      src="../wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0"
+      id="jquery-core-js"
+    ></script>
+    <script
+      src="../wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2"
+      id="jquery-migrate-js"
+    ></script>
+    <script
+      src="../wp-content/themes/e2m/assets/js/jquery.validate.min8a54.js?ver=1.0.0"
+      id="form-validation-js"
+    ></script>
+    <script
+      src="../wp-content/themes/e2m/assets/js/jquery-uic751.js?ver=1660321363"
+      id="jquery-ui-js-js"
+    ></script>
+    <script id="custom-js-js-extra">
+      var frontend_ajax_object = {
+        ajaxurl: "https:\/\/www.e2msolutions.com\/wp-admin\/admin-ajax.php",
+      };
+    </script>
+    <script
+      src="../wp-content/themes/e2m/assets/js/customc751.js?ver=1660321363"
+      id="custom-js-js"
+    ></script>
+
+    <link
+      rel="alternate"
+      type="application/json"
+      href="https://www.e2msolutions.com/wp-json/wp/v2/pages/11720"
+    />
+    <link
+      rel="EditURI"
+      type="application/rsd+xml"
+      title="RSD"
+      href="https://www.e2msolutions.com/xmlrpc.php?rsd"
+    />
+    <link
+      rel="wlwmanifest"
+      type="application/wlwmanifest+xml"
+      href="https://www.e2msolutions.com/wp-includes/wlwmanifest.xml"
+    />
+    <link rel="shortlink" href="https://www.e2msolutions.com/?p=11720" />
+    <link
+      rel="alternate"
+      type="application/json+oembed"
+      href="https://www.e2msolutions.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.e2msolutions.com%2Fhire-web-design-development-team%2F"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="https://www.e2msolutions.com/wp-content/themes/e2m/assets/fonts/WorkSans-Regular.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="https://www.e2msolutions.com/wp-content/themes/e2m/assets/fonts/WorkSans-Bold.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="https://www.e2msolutions.com/wp-content/themes/e2m/assets/fonts/WorkSans-Bold.ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="https://www.e2msolutions.com/wp-content/themes/e2m/assets/fonts/WorkSans-Regular.ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="https://www.e2msolutions.com/wp-content/themes/e2m/assets/fonts/WorkSans-Bold.woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="https://www.e2msolutions.com/wp-content/themes/e2m/assets/fonts/WorkSans-SemiBold.woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="https://www.e2msolutions.com/wp-content/themes/e2m/assets/fonts/WorkSans-Regular.woff"
+      crossorigin
+    />
+    <link
+      rel="icon"
+      href="https://itisticsolutions.com/assets/images/favicon.ico"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="https://itisticsolutions.com/assets/images/favicon.ico"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://itisticsolutions.com/assets/images/favicon.ico"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="https://itisticsolutions.com/assets/images/favicon.ico"
+    />
+    <style id="wp-custom-css">
+      .page-safe-area ._31054ad {
+        left: 11.30777%;
+      }
+
+      .page-safe-area ._53ec300 {
+        top: 91.48576%;
+        left: 11.30777%;
+      }
+
+      .page-safe-area ._835c1ad {
+        left: 11.30777%;
+        top: 95.79288%;
+      }
+
+      .page-safe-area ._5bc97fb {
+        left: 12.52136%;
+      }
+
+      .page-safe-area ._8b69d83 {
+        left: 12.52136%;
+      }
+
+      .page-safe-area ._2fdf76d {
+        left: 12.52136%;
+      }
+
+      figcaption {
+        text-align: center;
+      }
+
+      @media only screen and (max-width: 960px) {
+        p.plan-card-mobile_numbers {
+          font-size: 14px;
+          text-align: center;
+          border-top: 1px solid #c7d4d9;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          margin: 0;
+          color: #52aed5;
+        }
+      }
+    </style>
+    <noscript
+      ><style id="rocket-lazyload-nojs-css">
+        .rll-youtube-player,
+        [data-lazy-src] {
+          display: none !important;
+        }
+      </style></noscript
+    >
+    <link
+      rel="stylesheet"
+      href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        font-size: 0.835vw;
+      }
+      _::-moz-svg-foreign-content,
+      :root body {
+        font-size: 100%;
+      }
+      @media only screen and (min-width: 1024px) {
+        .main-navigation .sub-menu {
+          display: none;
+        }
+        .main-navigation .sub-menu#service_append {
+          display: none !important;
+        }
+      }
+      @media only screen and (max-width: 1024px) {
+        .mobileMenu ul ul.sub-menu {
+          display: none !important;
+        }
+        .site-header .menu > li.active ul.sub-menu {
+          display: block !important;
+        }
+        .philosopy-mobile .tab-header .ditels-tog {
+          display: none;
+        }
+      }
+    </style>
+
+    <script>
+      jQuery(window).load(function () {
+        setTimeout(function () {
+          jQuery(".sub-menu").css("display", "block");
+        }, 1000);
+      });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <!--  <script>-->
+    <!--    (function (w, d, s, l, i) {-->
+    <!--      w[l] = w[l] || [];-->
+    <!--      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });-->
+    <!--      var f = d.getElementsByTagName(s)[0],-->
+    <!--        j = d.createElement(s),-->
+    <!--        dl = l != "dataLayer" ? "&l=" + l : "";-->
+    <!--      j.async = true;-->
+    <!--      j.src = "../../www.googletagmanager.com/gtm5445.html?id=" + i + dl;-->
+    <!--      f.parentNode.insertBefore(j, f);-->
+    <!--    })(window, document, "script", "dataLayer", "GTM-W6GDNFD");-->
+    <!--  </script>-->
+    <!-- End Google Tag Manager -->
+  </head>
+
+  <body
+    class="page-template page-template-page-templates page-template-services-flex page-template-page-templatesservices-flex-php page page-id-11720 wp-custom-logo"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-dark-grayscale">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0 0.498039215686" />
+            <feFuncG type="table" tableValues="0 0.498039215686" />
+            <feFuncB type="table" tableValues="0 0.498039215686" />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-grayscale">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0 1" />
+            <feFuncG type="table" tableValues="0 1" />
+            <feFuncB type="table" tableValues="0 1" />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-purple-yellow">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0.549019607843 0.988235294118" />
+            <feFuncG type="table" tableValues="0 1" />
+            <feFuncB type="table" tableValues="0.717647058824 0.254901960784" />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-blue-red">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0 1" />
+            <feFuncG type="table" tableValues="0 0.278431372549" />
+            <feFuncB type="table" tableValues="0.592156862745 0.278431372549" />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-midnight">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0 0" />
+            <feFuncG type="table" tableValues="0 0.647058823529" />
+            <feFuncB type="table" tableValues="0 1" />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-magenta-yellow">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0.780392156863 1" />
+            <feFuncG type="table" tableValues="0 0.949019607843" />
+            <feFuncB type="table" tableValues="0.352941176471 0.470588235294" />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-purple-green">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0.650980392157 0.403921568627" />
+            <feFuncG type="table" tableValues="0 1" />
+            <feFuncB type="table" tableValues="0.447058823529 0.4" />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 0 0"
+      width="0"
+      height="0"
+      focusable="false"
+      role="none"
+      style="
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <filter id="wp-duotone-blue-orange">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR type="table" tableValues="0.0980392156863 1" />
+            <feFuncG type="table" tableValues="0 0.662745098039" />
+            <feFuncB type="table" tableValues="0.847058823529 0.419607843137" />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs>
+    </svg>
+    <div
+      id="page"
+      class="site hire-remote-team hire-web-design-development-team"
+    >
+      <!--<a class="skip-link screen-reader-text" href="#primary">Skip to content</a>-->
+
+      <main class="service">
+        <section
+          class="serBanner p-relative common-section padding-75 hirededicatedbanner removeBoth leftImage"
+        >
+          <div class="wrapper">
+            <div class="dflex wrap banner-inner">
+              <div class="content box-size">
+                <h1 class="title w700 capitalize">
+                  IT Services & IT Consulting
+                </h1>
+                <h3 style="color: #000">Remote Dedicated Staffing</h3>
+                <p class="description h5">
+                  ITistic solutions delivers value added and innovative full
+                  stack technology solutions that drives growth &
+                  competitiveness, We offer dedicated remote professionals to
+                  help you out in all sort of technologies, i.e. web design &
+                  development, digital marketing, software mobile development.
+                  <br />
+                  With over 15 years of combined industry experience our
+                  professionals are having top notch experience of designing &
+                  building Mobile apps, websites & softwares, either it's about
+                  growing businesses with marketing strategies or attracting
+                  customers with catchy designs we've got you covered at one
+                  place.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id=""
+          class="feature-block common-section right-sky-border small-wrapper removeTop"
+        >
+          <div class="wrapper">
+            <div class="head text-center"></div>
+            <div class="features columns col4 style4">
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure class="icon">
+                      <img
+                        class="wid100"
+                        alt=""
+                        src="../wp-content/uploads/2021/08/1-01.png"
+                      />
+                    </figure>
+                    <div class="content">
+                      <div class="text">Dedicated <br />Resources/Team</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure class="icon">
+                      <img
+                        class="wid100"
+                        alt=""
+                        src="../wp-content/uploads/2021/08/2-01.png"
+                      />
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        Multi Technology <br />Expertise & Experience
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure class="icon">
+                      <img
+                        class="wid100"
+                        alt=""
+                        src="../wp-content/uploads/2021/08/3-01.png"
+                      />
+                    </figure>
+                    <div class="content">
+                      <div class="text">Multiple <br />Projects/Tasks</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure class="icon">
+                      <img
+                        class="wid100"
+                        alt=""
+                        src="../wp-content/uploads/2021/08/4-01.png"
+                      />
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        Hourly , Weekly <br />Monthly & Yearly <br />
+                        Pricing
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center"></div>
+          </div>
+        </section>
+
+        <section
+          class="common-section flex-textbox small-wrapper hirededicatedmission light keep centeralign"
+          style="background-color: #eef8fa"
+        >
+          <div class="wrapper">
+            <div class="typo">
+              <h2 style="color: #000">Our Mission</h2>
+              <p>
+                Our aims is to be the one stop shop for customers looking for
+                any sort of technology solution, by offering innovative, cost
+                effective & value added solutions to businesses & startups
+                ITistic aims to empower it’s customers to stand out in this
+                competitive world of technology.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="wl_pricing_packages"
+          class="planAndPricingSection common-section sky-bottom-shadow removeBoth"
+        >
+          <div class="wrapper">
+            <div class="head text-center">
+              <h3>
+                Choose the best plan to scale & <br />
+                grow your business
+              </h3>
+              <h4 class="w400 font-36" style="text-align: center; color: #666">
+                Month to month contract, cancel as long as 15 days notice
+                period.
+              </h4>
+            </div>
+            <div class="planAndPricingSection Plan-price-table">
+              <div class="hide-desk-ipad">
+                <div class="plan-list-tabs">
+                  <ul class="dflex">
+                    <li class="active" data-id="plan_0">
+                      <span class="discount-text no-dis"
+                        ><b>No<sub></sub></b> <br />Discount</span
+                      >
+                      <a class="check" href="javascript:void(0)">Weekly</a>
+                    </li>
+                    <li data-id="plan_1">
+                      <span class="discount-text"
+                        ><b>5<sub>%</sub></b> <br />
+                        Discount</span
+                      >
+                      <a class="check" href="javascript:void(0)">Monthly</a>
+                    </li>
+                    <li data-id="plan_2">
+                      <span class="discount-text"
+                        ><b>10<sub>%</sub></b> <br />
+                        Discount</span
+                      >
+                      <a class="check" href="javascript:void(0)">Quarterly</a>
+                    </li>
+                    <li data-id="plan_3">
+                      <span class="discount-text"
+                        ><b>15<sub>%</sub></b> <br />
+                        Discount</span
+                      >
+                      <a class="check" href="javascript:void(0)">Yearly</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="best-plan-table Tabbing-best-plan">
+                  <table class="best-plan active" id="plan_0">
+                    <thead>
+                      <tr>
+                        <th></th>
+
+                        <th>
+                          <div class="best-plan-name">Fixed Hourly</div>
+                        </th>
+                        <th>
+                          <div class="best-plan-name">Starter</div>
+                        </th>
+                        <th>
+                          <div class="best-plan-name">Standard</div>
+                        </th>
+                        <th>
+                          <div class="best-plan-name">Pro</div>
+                        </th>
+                        <th>
+                          <div class="most-popular-plan">Most Popular</div>
+                          <div class="best-plan-name">Advanced</div>
+                        </th>
+                      </tr>
+                      <tr>
+                        <th></th>
+                        <th>
+                          <sup>$</sup>5<sub>/Hr</sub>
+                          <div class="tab_info_hire">
+                            <i
+                              class="fa fa-question-circle"
+                              style="font-size: 14px"
+                            ></i
+                            ><span style="color: #fff">
+                              Starting from $5 to $100 or above per hour,
+                              depending upon project complexities, requirements,
+                              deadline & service type, contact us to know more.
+                            </span>
+                          </div>
+                        </th>
+                        <th><sup>$</sup>500<sub>/week</sub></th>
+                        <th><sup>$</sup>900<sub>/week</sub></th>
+                        <th><sup>$</sup>1300<sub>/week</sub></th>
+                        <th><sup>$</sup>2000<sub>/week</sub></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Hours Per Day</td>
+                        <td>Depends</td>
+                        <td>Five</td>
+                        <td>Eight</td>
+                        <td>Ten</td>
+                        <td>As required</td>
+                      </tr>
+                      <tr>
+                        <td>Service</td>
+                        <td>
+                          Any one
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          One
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i>
+                            <span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          Two
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          Three
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          On-demand
+                          <div
+                            class="tab_info_hire"
+                            data-uw-styling-context="true"
+                          >
+                            <i
+                              class="fa fa-question-circle"
+                              data-uw-styling-context="true"
+                            ></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Professional</td>
+                        <td>
+                          One per service
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          One
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          Two
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          Three
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          As required
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          Real Time <br />
+                          Communication
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>phone, sms, email, whatsapp, skype</span>
+                          </div>
+                        </td>
+
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Meetings & Calls
+                          <div
+                            class="tab_info_hire"
+                            data-uw-styling-context="true"
+                          >
+                            <i
+                              class="fa fa-question-circle"
+                              data-uw-styling-context="true"
+                            ></i
+                            ><span data-uw-styling-context="true"
+                              >(Slack/Skype/Phone/Zoom/Mircrosoft Teams)</span
+                            >
+                          </div>
+                        </td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                      </tr>
+                      <tr>
+                        <td>Your choice of technology & tools</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                      </tr>
+                      <tr>
+                        <td>Weekend Support</td>
+                        <td>no</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                      </tr>
+                      <tr>
+                        <td>Progress reporting</td>
+                        <td>On-demand</td>
+                        <td>Week completion</td>
+                        <td>Weekly</td>
+                        <td>Weekly</td>
+                        <td>On-demand</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td></td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                  <table class="best-plan" id="plan_1">
+                    <thead>
+                      <tr>
+                        <th></th>
+
+                        <th>
+                          <div class="best-plan-name">Fixed Hourly</div>
+                        </th>
+                        <th>
+                          <div class="best-plan-name">Starter</div>
+                        </th>
+                        <th>
+                          <div class="best-plan-name">Standard</div>
+                        </th>
+                        <th>
+                          <div class="best-plan-name">Pro</div>
+                        </th>
+                        <th>
+                          <div class="most-popular-plan">Most Popular</div>
+                          <div class="best-plan-name">Advanced</div>
+                        </th>
+                      </tr>
+                      <tr>
+                        <th></th>
+                        <th>
+                          <sup>$</sup>5<sub>/Hr</sub>
+                          <div class="tab_info_hire">
+                            <i
+                              class="fa fa-question-circle"
+                              style="font-size: 14px"
+                            ></i
+                            ><span style="color: #fff">
+                              Starting from $5 to $100 or above per hour,
+                              depending upon project complexities, requirements,
+                              deadline & service type, contact us to know more.
+                            </span>
+                          </div>
+                        </th>
+                        <th>
+                          <sup>$</sup>475<sub>/week</sub>
+                          <span>1,900 billed monthly </span
+                          ><strong>$100 Savings</strong>
+                        </th>
+                        <th>
+                          <sup>$</sup>855<sub>/week</sub>
+                          <span>3,420 billed monthly </span
+                          ><strong>$180 Savings</strong>
+                        </th>
+                        <th>
+                          <sup>$</sup>1,235<sub>/week</sub>
+                          <span>$4,940 billed monthly </span
+                          ><strong>$260 Savings</strong>
+                        </th>
+                        <th>
+                          <sup>$</sup>1,600<sub>/week</sub>
+                          <span>$6400 billed monthly </span
+                          ><strong>$1600 Savings</strong>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Hours Per Day</td>
+                        <td>Depends</td>
+                        <td>Five</td>
+                        <td>Eight</td>
+                        <td>Ten</td>
+                        <td>As required</td>
+                      </tr>
+                      <tr>
+                        <td>Service</td>
+                        <td>
+                          Any one
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          One
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i>
+                            <span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          Two
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          Three
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          On-demand
+                          <div
+                            class="tab_info_hire"
+                            data-uw-styling-context="true"
+                          >
+                            <i
+                              class="fa fa-question-circle"
+                              data-uw-styling-context="true"
+                            ></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Professional</td>
+                        <td>
+                          One per service
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          One
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          Two
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          Three
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          As required
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          Real Time <br />
+                          Communication
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>phone, sms, email, whatsapp, skype</span>
+                          </div>
+                        </td>
+
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Meetings & Calls
+                          <div
+                            class="tab_info_hire"
+                            data-uw-styling-context="true"
+                          >
+                            <i
+                              class="fa fa-question-circle"
+                              data-uw-styling-context="true"
+                            ></i
+                            ><span data-uw-styling-context="true"
+                              >(Slack/Skype/Phone/Zoom/Mircrosoft Teams)</span
+                            >
+                          </div>
+                        </td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                      </tr>
+                      <tr>
+                        <td>Your choice of technology & tools</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                      </tr>
+                      <tr>
+                        <td>Weekend Support</td>
+                        <td>no</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                      </tr>
+                      <tr>
+                        <td>Progress reporting</td>
+                        <td>On-demand</td>
+                        <td>Week completion</td>
+                        <td>Weekly</td>
+                        <td>Weekly</td>
+                        <td>On-demand</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td></td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                  <table class="best-plan stick" id="plan_2">
+                    <thead>
+                      <tr>
+                        <th></th>
+
+                        <th>
+                          <div class="best-plan-name">Fixed Hourly</div>
+                        </th>
+                        <th>
+                          <div class="best-plan-name">Starter</div>
+                        </th>
+                        <th>
+                          <div class="best-plan-name">Standard</div>
+                        </th>
+                        <th>
+                          <div class="best-plan-name">Pro</div>
+                        </th>
+                        <th>
+                          <div class="most-popular-plan">Most Popular</div>
+                          <div class="best-plan-name">Advanced</div>
+                        </th>
+                      </tr>
+                      <tr>
+                        <th></th>
+                        <th>
+                          <sup>$</sup>5<sub>/Hr</sub>
+                          <div class="tab_info_hire">
+                            <i
+                              class="fa fa-question-circle"
+                              style="font-size: 14px"
+                            ></i
+                            ><span style="color: #fff">
+                              Starting from $5 to $100 or above per hour,
+                              depending upon project complexities, requirements,
+                              deadline & service type, contact us to know more.
+                            </span>
+                          </div>
+                        </th>
+                        <th>
+                          <sup>$</sup>450<sub>/week</sub>
+                          <span>$10,800 billed quarterly </span
+                          ><strong>$1,200 Savings</strong>
+                        </th>
+                        <th>
+                          <sup>$</sup>810<sub>/week</sub>
+                          <span>$19,440 billed quarterly </span
+                          ><strong>$2,160 Savings</strong>
+                        </th>
+                        <th>
+                          <sup>$</sup>1,170<sub>/week</sub>
+                          <span>$28,080 billed quarterly </span
+                          ><strong>$3,120 Savings</strong>
+                        </th>
+                        <th>
+                          <sup>$</sup>1,800<sub>/week</sub>
+                          <span>$43,200 billed quarterly </span
+                          ><strong>$4,800 Savings</strong>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Hours Per Day</td>
+                        <td>Depends</td>
+                        <td>Five</td>
+                        <td>Eight</td>
+                        <td>Ten</td>
+                        <td>As required</td>
+                      </tr>
+                      <tr>
+                        <td>Service</td>
+                        <td>
+                          Any one
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          One
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i>
+                            <span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          Two
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          Three
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          On-demand
+                          <div
+                            class="tab_info_hire"
+                            data-uw-styling-context="true"
+                          >
+                            <i
+                              class="fa fa-question-circle"
+                              data-uw-styling-context="true"
+                            ></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Professional</td>
+                        <td>
+                          One per service
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          One
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          Two
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          Three
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          As required
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          Real Time <br />
+                          Communication
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>phone, sms, email, whatsapp, skype</span>
+                          </div>
+                        </td>
+
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Meetings & Calls
+                          <div
+                            class="tab_info_hire"
+                            data-uw-styling-context="true"
+                          >
+                            <i
+                              class="fa fa-question-circle"
+                              data-uw-styling-context="true"
+                            ></i
+                            ><span data-uw-styling-context="true"
+                              >(Slack/Skype/Phone/Zoom/Mircrosoft Teams)</span
+                            >
+                          </div>
+                        </td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                      </tr>
+                      <tr>
+                        <td>Your choice of technology & tools</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                      </tr>
+                      <tr>
+                        <td>Weekend Support</td>
+                        <td>no</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                      </tr>
+                      <tr>
+                        <td>Progress reporting</td>
+                        <td>On-demand</td>
+                        <td>Week completion</td>
+                        <td>Weekly</td>
+                        <td>Weekly</td>
+                        <td>On-demand</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td></td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                  <table class="best-plan stick" id="plan_3">
+                    <thead>
+                      <tr>
+                        <th></th>
+
+                        <th>
+                          <div class="best-plan-name">Fixed Hourly</div>
+                        </th>
+                        <th>
+                          <div class="best-plan-name">Starter</div>
+                        </th>
+                        <th>
+                          <div class="best-plan-name">Standard</div>
+                        </th>
+                        <th>
+                          <div class="best-plan-name">Pro</div>
+                        </th>
+                        <th>
+                          <div class="most-popular-plan">Most Popular</div>
+                          <div class="best-plan-name">Advanced</div>
+                        </th>
+                      </tr>
+                      <tr>
+                        <th></th>
+                        <th>
+                          <sup>$</sup>5<sub>/Hr</sub>
+                          <div class="tab_info_hire">
+                            <i
+                              class="fa fa-question-circle"
+                              style="font-size: 14px"
+                            ></i
+                            ><span style="color: #fff">
+                              Starting from $5 to $100 or above per hour,
+                              depending upon project complexities, requirements,
+                              deadline & service type, contact us to know more.
+                            </span>
+                          </div>
+                        </th>
+                        <th>
+                          <sup>$</sup>403<sub>/week</sub>
+                          <span>$19,380 billed yearly </span
+                          ><strong>$3,420 Savings</strong>
+                        </th>
+                        <th>
+                          <sup>$</sup>765<sub>/week</sub>
+                          <span>$36,720 billed yearly </span
+                          ><strong>$6,480 Savings</strong>
+                        </th>
+                        <th>
+                          <sup>$</sup>1,105<sub>/week</sub>
+                          <span>$62,400 billed yearly </span
+                          ><strong>$9,360 Savings</strong>
+                        </th>
+                        <th>
+                          <sup>$</sup>1,700<sub>/week</sub>
+                          <span>$81,600 billed yearly </span
+                          ><strong>$14,400 Savings</strong>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Hours Per Day</td>
+                        <td>Depends</td>
+                        <td>Five</td>
+                        <td>Eight</td>
+                        <td>Ten</td>
+                        <td>As required</td>
+                      </tr>
+                      <tr>
+                        <td>Service</td>
+                        <td>
+                          Any one
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          One
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i>
+                            <span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          Two
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          Three
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          On-demand
+                          <div
+                            class="tab_info_hire"
+                            data-uw-styling-context="true"
+                          >
+                            <i
+                              class="fa fa-question-circle"
+                              data-uw-styling-context="true"
+                            ></i
+                            ><span>
+                              graphic designing, web development, web design,
+                              digital marketing, social media management, mobile
+                              app development, software development, UI/UX
+                              designing
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Professional</td>
+                        <td>
+                          One per service
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          One
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          Two
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          Three
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                        <td>
+                          As required
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span
+                              >graphic designer, web developer, web designer,
+                              digital marketer, social media manager, mobile app
+                              developer, software developer, UI/UX
+                              designer</span
+                            >
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          Real Time <br />
+                          Communication
+                          <div class="tab_info_hire">
+                            <i class="fa fa-question-circle"></i
+                            ><span>phone, sms, email, whatsapp, skype</span>
+                          </div>
+                        </td>
+
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Meetings & Calls
+                          <div
+                            class="tab_info_hire"
+                            data-uw-styling-context="true"
+                          >
+                            <i
+                              class="fa fa-question-circle"
+                              data-uw-styling-context="true"
+                            ></i
+                            ><span data-uw-styling-context="true"
+                              >(Slack/Skype/Phone/Zoom/Mircrosoft Teams)</span
+                            >
+                          </div>
+                        </td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                        <td>On-demand</td>
+                      </tr>
+                      <tr>
+                        <td>Your choice of technology & tools</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                      </tr>
+                      <tr>
+                        <td>Weekend Support</td>
+                        <td>no</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                        <td>yes</td>
+                      </tr>
+                      <tr>
+                        <td>Progress reporting</td>
+                        <td>On-demand</td>
+                        <td>Week completion</td>
+                        <td>Weekly</td>
+                        <td>Weekly</td>
+                        <td>On-demand</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td></td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                        <td>
+                          <a
+                            class="schedule-btn page-scroll starter_plan"
+                            href="https://itisticsolutions.com/meeting"
+                            data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                            data-plan-name="Starter Monthly"
+                            >Setup A Meeting</a
+                          >
+                        </td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+              <div class="hide-mob-ipad">
+                <div class="plan-list-tabs">
+                  <ul class="dflex">
+                    <li class="active" data-id="plan_0">
+                      <span class="discount-text"
+                        ><b>5<sub>%</sub></b> <br />
+                        Discount</span
+                      >
+                      <a href="javascript:void(0)">Weekly</a>
+                    </li>
+                    <li data-id="plan_1">
+                      <span class="discount-text"
+                        ><b>5<sub>%</sub></b> <br />
+                        Discount</span
+                      >
+                      <a href="javascript:void(0)">Monthly</a>
+                    </li>
+                    <li data-id="plan_2">
+                      <span class="discount-text"
+                        ><b>10<sub>%</sub></b> <br />
+                        Discount</span
+                      >
+                      <a href="javascript:void(0)">Quarterly</a>
+                    </li>
+                    <li data-id="plan_3">
+                      <span class="discount-text"
+                        ><b>15<sub>%</sub></b> <br />
+                        Discount</span
+                      >
+                      <a href="javascript:void(0)">Yearly</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="plan-card-mobile-list">
+                  <div class="plan-cards-list active" id="plan">
+                    <div class="plan-card active">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Starter</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>599<sub>/mo</sub></h4>
+                          </div>
+                        </div>
+                        <div class="expand-btn r-arrow-down"></div>
+                        <p class="plan-card-mobile_numbers">
+                          <b>35</b> Agencies active on this plan
+                        </p>
+                      </div>
+                      <div
+                        class="plan-card-body active 558"
+                        style="display: block"
+                      >
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>15 - 20 Hours Per Month</li>
+                            <li>
+                              Any 1 Technology (WordPress, WooCommerce, Shopify,
+                              BiCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Email Support</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtBKdIecjj2NNLERuGMOrLt"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Standard</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>899<sub>/mo</sub></h4>
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                        <p class="plan-card-mobile_numbers">
+                          <b>21</b> Agencies active on this plan
+                        </p>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>30 - 35 Hours Per Month</li>
+                            <li>
+                              Any 1 Technology (WordPress, WooCommerce, Shopify,
+                              BiCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Landing Page</li>
+                            <li>Email Support</li>
+                            <li>Once a month Progress Call</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtBMTIecjj2NNLEXBXZCJ63"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Pro</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>1499<sub>/mo</sub></h4>
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                        <p class="plan-card-mobile_numbers">
+                          <b>27</b> Agencies active on this plan
+                        </p>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>50 - 60 Hours Per Month</li>
+                            <li>
+                              Any 2 Technologies (Wordpress, Shopify,
+                              BigCommerce, WooCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Unlimited Full Website Projects</li>
+                            <li>Landing Page</li>
+                            <li>Email Support</li>
+                            <li>Bi-weekly Progress Call</li>
+                            <li>Your Choice of Project Management Tool</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtBNQIecjj2NNLEEA1PDDZt"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <span class="most-popular-plan">Most Popular</span>
+                            <h2>Advanced</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>2499<sub>/mo</sub></h4>
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                        <p class="plan-card-mobile_numbers">
+                          <b>80</b> Agencies active on this plan
+                        </p>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>100 - 120 Hours Per Month</li>
+                            <li>
+                              Multi Technologies (Wordpress, Shopify,
+                              BigCommerce, WooCommerce)
+                            </li>
+                            <li>Dedicated Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Unlimited Full Website Projects</li>
+                            <li>Landing Page</li>
+                            <li>Hosting/Email Server Management</li>
+                            <li>Email Support</li>
+                            <li>Real-time Communication</li>
+                            <li>Weekly Progress Call</li>
+                            <li>Your Choice of Project Management Tool</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtBUaIecjj2NNLEqQHfvZdU"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="plan-cards-list" id="plan_0">
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Starter</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>540<sub>/mo</sub></h4>
+                            <span
+                              >$1620 billed quarterly<b>$177 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn r-arrow-down"></div>
+                      </div>
+                      <div class="plan-card-body active" style="display: block">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>15 - 20 Hours Per Month</li>
+                            <li>
+                              Any 1 Technology (WordPress, WooCommerce, Shopify,
+                              BiCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Email Support</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtCGuIecjj2NNLEAD4ERrnY"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Standard</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>810<sub>/mo</sub></h4>
+                            <span
+                              >$2430 billed quarterly<b>$267 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>30 - 35 Hours Per Month</li>
+                            <li>
+                              Any 1 Technology (WordPress, WooCommerce, Shopify,
+                              BiCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Landing Page</li>
+                            <li>Email Support</li>
+                            <li>Once a month Progress Call</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtCMeIecjj2NNLEuDcxGrK0"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Pro</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>1350<sub>/mo</sub></h4>
+                            <span
+                              >$4050 billed quarterly<b>$447 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>50 - 60 Hours Per Month</li>
+                            <li>
+                              Any 2 Technologies (Wordpress, Shopify,
+                              BigCommerce, WooCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Unlimited Full Website Projects</li>
+                            <li>Landing Page</li>
+                            <li>Email Support</li>
+                            <li>Bi-weekly Progress Call</li>
+                            <li>Your Choice of Project Management Tool</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtCNGIecjj2NNLEYh3eOHCY"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <span class="most-popular-plan">Most Popular</span>
+                            <h2>Advanced</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>2250<sub>/mo</sub></h4>
+                            <span
+                              >$6750 billed quarterly<b>$747 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>100 - 120 Hours Per Month</li>
+                            <li>
+                              Multi Technologies (Wordpress, Shopify,
+                              BigCommerce, WooCommerce)
+                            </li>
+                            <li>Dedicated Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Unlimited Full Website Projects</li>
+                            <li>Landing Page</li>
+                            <li>Hosting/Email Server Management</li>
+                            <li>Email Support</li>
+                            <li>Real-time Communication</li>
+                            <li>Weekly Progress Call</li>
+                            <li>Your Choice of Project Management Tool</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtCNyIecjj2NNLECGNT6zzI"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="plan-cards-list" id="plan_1">
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Starter</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>540<sub>/mo</sub></h4>
+                            <span
+                              >$1620 billed quarterly<b>$177 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn r-arrow-down"></div>
+                      </div>
+                      <div class="plan-card-body active" style="display: block">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>15 - 20 Hours Per Month</li>
+                            <li>
+                              Any 1 Technology (WordPress, WooCommerce, Shopify,
+                              BiCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Email Support</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtCGuIecjj2NNLEAD4ERrnY"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Standard</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>810<sub>/mo</sub></h4>
+                            <span
+                              >$2430 billed quarterly<b>$267 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>30 - 35 Hours Per Month</li>
+                            <li>
+                              Any 1 Technology (WordPress, WooCommerce, Shopify,
+                              BiCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Landing Page</li>
+                            <li>Email Support</li>
+                            <li>Once a month Progress Call</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtCMeIecjj2NNLEuDcxGrK0"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Pro</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>1350<sub>/mo</sub></h4>
+                            <span
+                              >$4050 billed quarterly<b>$447 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>50 - 60 Hours Per Month</li>
+                            <li>
+                              Any 2 Technologies (Wordpress, Shopify,
+                              BigCommerce, WooCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Unlimited Full Website Projects</li>
+                            <li>Landing Page</li>
+                            <li>Email Support</li>
+                            <li>Bi-weekly Progress Call</li>
+                            <li>Your Choice of Project Management Tool</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtCNGIecjj2NNLEYh3eOHCY"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <span class="most-popular-plan">Most Popular</span>
+                            <h2>Advanced</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>2250<sub>/mo</sub></h4>
+                            <span
+                              >$6750 billed quarterly<b>$747 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>100 - 120 Hours Per Month</li>
+                            <li>
+                              Multi Technologies (Wordpress, Shopify,
+                              BigCommerce, WooCommerce)
+                            </li>
+                            <li>Dedicated Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Unlimited Full Website Projects</li>
+                            <li>Landing Page</li>
+                            <li>Hosting/Email Server Management</li>
+                            <li>Email Support</li>
+                            <li>Real-time Communication</li>
+                            <li>Weekly Progress Call</li>
+                            <li>Your Choice of Project Management Tool</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtCNyIecjj2NNLECGNT6zzI"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="plan-cards-list" id="plan_2">
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Starter</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>540<sub>/mo</sub></h4>
+                            <span
+                              >$1620 billed quarterly<b>$177 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn r-arrow-down"></div>
+                      </div>
+                      <div class="plan-card-body active" style="display: block">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>15 - 20 Hours Per Month</li>
+                            <li>
+                              Any 1 Technology (WordPress, WooCommerce, Shopify,
+                              BiCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Email Support</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtCGuIecjj2NNLEAD4ERrnY"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Standard</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>810<sub>/mo</sub></h4>
+                            <span
+                              >$2430 billed quarterly<b>$267 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>30 - 35 Hours Per Month</li>
+                            <li>
+                              Any 1 Technology (WordPress, WooCommerce, Shopify,
+                              BiCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Landing Page</li>
+                            <li>Email Support</li>
+                            <li>Once a month Progress Call</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtCMeIecjj2NNLEuDcxGrK0"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Pro</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>1350<sub>/mo</sub></h4>
+                            <span
+                              >$4050 billed quarterly<b>$447 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>50 - 60 Hours Per Month</li>
+                            <li>
+                              Any 2 Technologies (Wordpress, Shopify,
+                              BigCommerce, WooCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Unlimited Full Website Projects</li>
+                            <li>Landing Page</li>
+                            <li>Email Support</li>
+                            <li>Bi-weekly Progress Call</li>
+                            <li>Your Choice of Project Management Tool</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtCNGIecjj2NNLEYh3eOHCY"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <span class="most-popular-plan">Most Popular</span>
+                            <h2>Advanced</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>2250<sub>/mo</sub></h4>
+                            <span
+                              >$6750 billed quarterly<b>$747 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>100 - 120 Hours Per Month</li>
+                            <li>
+                              Multi Technologies (Wordpress, Shopify,
+                              BigCommerce, WooCommerce)
+                            </li>
+                            <li>Dedicated Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Unlimited Full Website Projects</li>
+                            <li>Landing Page</li>
+                            <li>Hosting/Email Server Management</li>
+                            <li>Email Support</li>
+                            <li>Real-time Communication</li>
+                            <li>Weekly Progress Call</li>
+                            <li>Your Choice of Project Management Tool</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtCNyIecjj2NNLECGNT6zzI"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="plan-cards-list" id="plan_3">
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Starter</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>510<sub>/mo</sub></h4>
+                            <span>$6120 billed yearly<b>$1068 Savings</b></span>
+                          </div>
+                        </div>
+                        <div class="expand-btn r-arrow-down"></div>
+                      </div>
+                      <div class="plan-card-body active" style="display: block">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>15 - 20 Hours Per Month</li>
+                            <li>
+                              Any 1 Technology (WordPress, WooCommerce, Shopify,
+                              BiCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Email Support</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtBkgIecjj2NNLEDUyu0wsJ"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Standard</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>765<sub>/mo</sub></h4>
+                            <span>$9180 billed yearly<b>$1608 Savings</b></span>
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>30 - 35 Hours Per Month</li>
+                            <li>
+                              Any 1 Technology (WordPress, WooCommerce, Shopify,
+                              BiCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Landing Page</li>
+                            <li>Email Support</li>
+                            <li>Once a month Progress Call</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtBlWIecjj2NNLET1gbKYCa"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <h2>Pro</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>1275<sub>/mo</sub></h4>
+                            <span
+                              >$15,300 billed yearly<b>$2688 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>50 - 60 Hours Per Month</li>
+                            <li>
+                              Any 2 Technologies (Wordpress, Shopify,
+                              BigCommerce, WooCommerce)
+                            </li>
+                            <li>Shared Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Unlimited Full Website Projects</li>
+                            <li>Landing Page</li>
+                            <li>Email Support</li>
+                            <li>Bi-weekly Progress Call</li>
+                            <li>Your Choice of Project Management Tool</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtBmzIecjj2NNLED6BIVODa"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="plan-card">
+                      <div class="cont-wrap cont-wrap-title_table">
+                        <div class="plan-card-top">
+                          <div class="plan-card-header">
+                            <span class="most-popular-plan">Most Popular</span>
+                            <h2>Advanced</h2>
+                          </div>
+                          <div class="plan-card-price">
+                            <h4><sup>$</sup>2125<sub>/mo</sub></h4>
+                            <span
+                              >$25,500 billed yearly<b>$4488 Savings</b></span
+                            >
+                          </div>
+                        </div>
+                        <div class="expand-btn"></div>
+                      </div>
+                      <div class="plan-card-body" style="display: none">
+                        <div class="cont-wrap">
+                          <ul>
+                            <li>100 - 120 Hours Per Month</li>
+                            <li>
+                              Multi Technologies (Wordpress, Shopify,
+                              BigCommerce, WooCommerce)
+                            </li>
+                            <li>Dedicated Resource</li>
+                            <li>
+                              Unlimited Websites Maintenance/Support/Care Tasks
+                            </li>
+                            <li>Unlimited Full Website Projects</li>
+                            <li>Landing Page</li>
+                            <li>Hosting/Email Server Management</li>
+                            <li>Email Support</li>
+                            <li>Real-time Communication</li>
+                            <li>Weekly Progress Call</li>
+                            <li>Your Choice of Project Management Tool</li>
+                          </ul>
+                          <div
+                            class="try-button"
+                            data-uw-styling-context="true"
+                          >
+                            <a
+                              class="page-scroll get-btn btn orange schedule-btn starter_plan"
+                              href="https://itisticsolutions.com/meeting"
+                              data-plan="price_1KtBnNIecjj2NNLE16wZA3se"
+                              >Setup A Meeting</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <script>
+              jQuery(".best-plan-table td").each(function () {
+                var cellText = jQuery(this).html();
+                var val_yes = "yes";
+                var val_no = "no";
+                if (cellText == val_yes) {
+                  jQuery(this).replaceWith("<td class='yes'></td>");
+                }
+                if (cellText == val_no) {
+                  jQuery(this).replaceWith("<td class='no'></td>");
+                }
+              });
+            </script>
+          </div>
+        </section>
+
+        <section
+          class="common-section flex-textbox white-label-custom-price light padding-75 removeBoth centeralign"
+          style="background-color: #eef8fa"
+        >
+          <div class="wrapper">
+            <div class="typo">
+              <h3>Looking for Custom pricing?</h3>
+              <p>
+                Build your dedicated Web Design &amp; Development team.
+                <a class="page-scroll hello" href="itisticsolutions.com/contact"
+                  >Contact us</a
+                >
+                to schedule a call.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id=""
+          class="feature-block common-section small-wrapper hire-r-how-work keep"
+        >
+          <div class="wrapper">
+            <div class="head text-center">
+              <div class="title-ecom-plat">
+                <h2 class="shead w700 font-60">How Does it Work?</h2>
+              </div>
+            </div>
+            <div class="features columns col4 style4">
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure
+                      class="icon"
+                      style="
+                        background: linear-gradient(to right, #ffa614, #f3cc14);
+                      "
+                    >
+                      <h1 style="color: #ffff">1</h1>
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        <strong
+                          >Contract Signing (optional) <br />
+                          or Direct On-boarding
+                        </strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure
+                      class="icon"
+                      style="
+                        background: linear-gradient(to right, #ffa614, #f3cc14);
+                      "
+                    >
+                      <h1 style="color: #ffff">2</h1>
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        <strong
+                          >Get Started With <br />
+                          Your Project/Task
+                        </strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure
+                      class="icon"
+                      style="
+                        background: linear-gradient(to right, #ffa614, #f3cc14);
+                      "
+                    >
+                      <h1 style="color: #ffff">3</h1>
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        <strong
+                          >On-Demand Team Meeting<br />With 24/7 Support</strong
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure
+                      class="icon"
+                      style="
+                        background: linear-gradient(to right, #ffa614, #f3cc14);
+                      "
+                    >
+                      <h1 style="color: #ffff">4</h1>
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        <strong>Weekly, Monthly & Yearly<br />Payments </strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center"></div>
+          </div>
+        </section>
+
+        <!--<section-->
+        <!--  id=""-->
+        <!--  class="feature-block common-section hirededicatedtechstack removeBoth padding-75"-->
+        <!--  style="background-color: #f3f3f3"-->
+        <!-->-->
+        <!--  <div class="wrapper">-->
+        <!--    <div class="head text-center">-->
+        <!--      <div class="title-ecom-plat">-->
+        <!--        <h2 class="shead w700 font-60">Tech Stack</h2>-->
+        <!--      </div>-->
+        <!--    </div>-->
+        <!--    <div class="features columns col6 style4">-->
+        <!--      <div class="block">-->
+        <!--        <div class="inner">-->
+        <!--          <div class="dflex wrap">-->
+        <!--            <figure class="icon" style="background-color: #ffffff">-->
+        <!--              <img-->
+        <!--                class="wid100"-->
+        <!--                alt=""-->
+        <!--                src="../wp-content/uploads/2021/08/sprite_google_penalty_recovery1-1.png"-->
+        <!--              />-->
+        <!--            </figure>-->
+        <!--            <div class="content">-->
+        <!--              <div class="text">HTML 5</div>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+
+        <!--      <div class="block">-->
+        <!--        <div class="inner">-->
+        <!--          <div class="dflex wrap">-->
+        <!--            <figure class="icon" style="background-color: #ffffff">-->
+        <!--              <img-->
+        <!--                class="wid100"-->
+        <!--                alt=""-->
+        <!--                src="../wp-content/uploads/2021/08/sprite_google_penalty_recovery2-1.png"-->
+        <!--              />-->
+        <!--            </figure>-->
+        <!--            <div class="content">-->
+        <!--              <div class="text">CSS 3</div>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+
+        <!--      <div class="block">-->
+        <!--        <div class="inner">-->
+        <!--          <div class="dflex wrap">-->
+        <!--            <figure class="icon" style="background-color: #ffffff">-->
+        <!--              <img-->
+        <!--                class="wid100"-->
+        <!--                alt=""-->
+        <!--                src="../wp-content/uploads/2021/08/sprite_google_penalty_recovery3-1.png"-->
+        <!--              />-->
+        <!--            </figure>-->
+        <!--            <div class="content">-->
+        <!--              <div class="text">jQuery</div>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+
+        <!--      <div class="block">-->
+        <!--        <div class="inner">-->
+        <!--          <div class="dflex wrap">-->
+        <!--            <figure class="icon" style="background-color: #ffffff">-->
+        <!--              <img-->
+        <!--                class="wid100"-->
+        <!--                alt=""-->
+        <!--                src="../wp-content/uploads/2021/08/sprite_google_penalty_recovery4-1.png"-->
+        <!--              />-->
+        <!--            </figure>-->
+        <!--            <div class="content">-->
+        <!--              <div class="text">WordPress</div>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+
+        <!--      <div class="block">-->
+        <!--        <div class="inner">-->
+        <!--          <div class="dflex wrap">-->
+        <!--            <figure class="icon" style="background-color: #ffffff">-->
+        <!--              <img-->
+        <!--                class="wid100"-->
+        <!--                alt=""-->
+        <!--                src="../wp-content/uploads/2021/08/sprite_google_penalty_recovery6-1.png"-->
+        <!--              />-->
+        <!--            </figure>-->
+        <!--            <div class="content">-->
+        <!--              <div class="text">Cloudfare</div>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+
+        <!--      <div class="block">-->
+        <!--        <div class="inner">-->
+        <!--          <div class="dflex wrap">-->
+        <!--            <figure class="icon" style="background-color: #ffffff">-->
+        <!--              <img-->
+        <!--                class="wid100"-->
+        <!--                alt=""-->
+        <!--                src="../wp-content/uploads/2021/08/sprite_google_penalty_recovery10-1.png"-->
+        <!--              />-->
+        <!--            </figure>-->
+        <!--            <div class="content">-->
+        <!--              <div class="text">Shopify</div>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+
+        <!--      <div class="block">-->
+        <!--        <div class="inner">-->
+        <!--          <div class="dflex wrap">-->
+        <!--            <figure class="icon" style="background-color: #ffffff">-->
+        <!--              <img-->
+        <!--                class="wid100"-->
+        <!--                alt=""-->
+        <!--                src="../wp-content/uploads/2021/08/sprite_google_penalty_recovery11-1.png"-->
+        <!--              />-->
+        <!--            </figure>-->
+        <!--            <div class="content">-->
+        <!--              <div class="text">WooCommerce</div>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+
+        <!--      <div class="block">-->
+        <!--        <div class="inner">-->
+        <!--          <div class="dflex wrap">-->
+        <!--            <figure class="icon" style="background-color: #ffffff">-->
+        <!--              <img-->
+        <!--                class="wid100"-->
+        <!--                alt=""-->
+        <!--                src="../wp-content/uploads/2021/08/sprite_google_penalty_recovery12-1.png"-->
+        <!--              />-->
+        <!--            </figure>-->
+        <!--            <div class="content">-->
+        <!--              <div class="text">BigCommerce</div>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+
+        <!--      <div class="block">-->
+        <!--        <div class="inner">-->
+        <!--          <div class="dflex wrap">-->
+        <!--            <figure class="icon" style="background-color: #ffffff">-->
+        <!--              <img-->
+        <!--                class="wid100"-->
+        <!--                alt=""-->
+        <!--                src="../wp-content/uploads/2021/08/sprite_google_penalty_recovery13-1.png"-->
+        <!--              />-->
+        <!--            </figure>-->
+        <!--            <div class="content">-->
+        <!--              <div class="text">PHP</div>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+
+        <!--      <div class="block">-->
+        <!--        <div class="inner">-->
+        <!--          <div class="dflex wrap">-->
+        <!--            <figure class="icon" style="background-color: #ffffff">-->
+        <!--              <img-->
+        <!--                class="wid100"-->
+        <!--                alt=""-->
+        <!--                src="../wp-content/uploads/2021/08/sprite_google_penalty_recovery14-1.png"-->
+        <!--              />-->
+        <!--            </figure>-->
+        <!--            <div class="content">-->
+        <!--              <div class="text">Laravel</div>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+
+        <!--      <div class="block">-->
+        <!--        <div class="inner">-->
+        <!--          <div class="dflex wrap">-->
+        <!--            <figure class="icon" style="background-color: #ffffff">-->
+        <!--              <img-->
+        <!--                class="wid100"-->
+        <!--                alt=""-->
+        <!--                src="../wp-content/uploads/2021/08/sprite_google_penalty_recovery22.png"-->
+        <!--              />-->
+        <!--            </figure>-->
+        <!--            <div class="content">-->
+        <!--              <div class="text">AWS</div>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--      </div>-->
+        <!--    </div>-->
+
+        <!--    <div class="text-center"></div>-->
+        <!--  </div>-->
+        <!--</section>-->
+
+        <section
+          id=""
+          class="feature-block common-section three-white-box hirededicatedbenefitsremote removeBoth padding-75"
+          style="background-color: #eef8fa"
+        >
+          <div class="wrapper">
+            <div class="head text-center">
+              <div class="title-ecom-plat">
+                <h2 class="shead w700 font-60">
+                  Benefits of our Remote Resource <br />Team(USP’s)
+                </h2>
+              </div>
+            </div>
+            <div class="features columns col3 style4">
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure class="icon">
+                      <img
+                        class="wid100"
+                        alt="The convenience of choosing your suitable remote resource model - Benefits of our Remote Resource Team"
+                        src="../wp-content/uploads/2021/08/benefits_hire_remote-icon1.png"
+                      />
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        The convenience of choosing your suitable remote
+                        resource model
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure class="icon">
+                      <img
+                        class="wid100"
+                        alt="No hidden or start-up costs - Benefits of our Remote Resource Team"
+                        src="../wp-content/uploads/2021/08/benefits_hire_remote-icon2.png"
+                      />
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        No hidden or start-up<br />
+                        costs
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure class="icon">
+                      <img
+                        class="wid100"
+                        alt="Flexibility to modify the plan - Benefits of our Remote Resource Team"
+                        src="../wp-content/uploads/2021/08/benefits_hire_remote-icon3.png"
+                      />
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        Flexibility to modify <br />the plan
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure class="icon">
+                      <img
+                        class="wid100"
+                        alt="Daily reporting & communication - Benefits of our Remote Resource Team"
+                        src="../wp-content/uploads/2021/08/benefits_hire_remote-icon4.png"
+                      />
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        Daily reporting & <br />
+                        communication
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure class="icon">
+                      <img
+                        class="wid100"
+                        alt="Access to a pool of experts with multi tech stack expertise - Benefits of our Remote Resource Team"
+                        src="../wp-content/uploads/2021/08/benefits_hire_remote-icon5.png"
+                      />
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        Access to a pool of experts with <br />
+                        multi tech stack expertise
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure class="icon">
+                      <img
+                        class="wid100"
+                        alt="No overhead cost - Benefits of our Remote Resource Team"
+                        src="../wp-content/uploads/2021/08/benefits_hire_remote-icon6.png"
+                      />
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        No overhead <br />
+                        cost
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure class="icon">
+                      <img
+                        class="wid100"
+                        alt="No additional expense toward training and retaining - Benefits of our Remote Resource Team"
+                        src="../wp-content/uploads/2021/08/benefits_hire_remote-icon7.png"
+                      />
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        No additional expense toward training and retaining
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure class="icon">
+                      <img
+                        class="wid100"
+                        alt="Complete source code authorization - Benefits of our Remote Resource Team"
+                        src="../wp-content/uploads/2021/08/benefits_hire_remote-icon8.png"
+                      />
+                    </figure>
+                    <div class="content">
+                      <div class="text">Complete source code authorization</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block">
+                <div class="inner">
+                  <div class="dflex wrap">
+                    <figure class="icon">
+                      <img
+                        class="wid100"
+                        alt="Save more than 50% on salaries - Benefits of our Remote Resource Team"
+                        src="../wp-content/uploads/2021/08/benefits_hire_remote-icon9.png"
+                      />
+                    </figure>
+                    <div class="content">
+                      <div class="text">
+                        Save more than 50% <br />
+                        on salaries
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer id="colophon" class="site-footer">
+        <!---- Get In Touch Start----->
+
+        <!---- Get In Touch End----->
+        <!----- Footer Logos Start---->
+
+        <!----- Footer Logos End---->
+
+        <!-----popup Overlay Start----->
+        <div class="mailchimp_popup general-pop" style="display: none">
+          <div class="popup-overlay"></div>
+          <div class="popup_wrap">
+            <a class="popup-close" href="javascript:void(0)"></a>
+            <div class="popup_content_wrap">
+              <div id="mc_embed_signup" class="mc-inner_content">
+                <!-- <div class="nt_button_wrapper"><a href="javascript:void(0)" class="popup-close-link">No, Thanks</a></div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-----popup Overlay End----->
+
+        <script
+          data-cfasync="false"
+          src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+        ></script>
+        <script
+          defer
+          src="../wp-content/themes/e2m/assets/js/slick.js"
+        ></script>
+        <!--<script async src="https://www.e2msolutions.com/wp-content/themes/e2m/assets/js/jquery.validate.min.js"></script>
+<script async src="https://www.e2msolutions.com/wp-content/themes/e2m/assets/js/custom.js"></script>-->
+      </footer>
+    </div>
+    <!-- #page -->
+
+    <link
+      rel="stylesheet"
+      id="gaddon_form_settings_css-css"
+      href="../wp-content/plugins/gravityforms/includes/addon/css/gaddon_settings.min6770.css?ver=2.6.5"
+      media="all"
+    />
+    <script
+      src="../wp-content/plugins/metronet-profile-picture/js/mpp-frontendd315.js?ver=2.6.0"
+      id="mpp_gutenberg_tabs-js"
+    ></script>
+    <script id="rocket-browser-checker-js-after">
+      "use strict";
+      var _createClass = (function () {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            (descriptor.enumerable = descriptor.enumerable || !1),
+              (descriptor.configurable = !0),
+              "value" in descriptor && (descriptor.writable = !0),
+              Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function (Constructor, protoProps, staticProps) {
+          return (
+            protoProps && defineProperties(Constructor.prototype, protoProps),
+            staticProps && defineProperties(Constructor, staticProps),
+            Constructor
+          );
+        };
+      })();
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor))
+          throw new TypeError("Cannot call a class as a function");
+      }
+      var RocketBrowserCompatibilityChecker = (function () {
+        function RocketBrowserCompatibilityChecker(options) {
+          _classCallCheck(this, RocketBrowserCompatibilityChecker),
+            (this.passiveSupported = !1),
+            this._checkPassiveOption(this),
+            (this.options = !!this.passiveSupported && options);
+        }
+        return (
+          _createClass(RocketBrowserCompatibilityChecker, [
+            {
+              key: "_checkPassiveOption",
+              value: function (self) {
+                try {
+                  var options = {
+                    get passive() {
+                      return !(self.passiveSupported = !0);
+                    },
+                  };
+                  window.addEventListener("test", null, options),
+                    window.removeEventListener("test", null, options);
+                } catch (err) {
+                  self.passiveSupported = !1;
+                }
+              },
+            },
+            {
+              key: "initRequestIdleCallback",
+              value: function () {
+                !1 in window &&
+                  (window.requestIdleCallback = function (cb) {
+                    var start = Date.now();
+                    return setTimeout(function () {
+                      cb({
+                        didTimeout: !1,
+                        timeRemaining: function () {
+                          return Math.max(0, 50 - (Date.now() - start));
+                        },
+                      });
+                    }, 1);
+                  }),
+                  !1 in window &&
+                    (window.cancelIdleCallback = function (id) {
+                      return clearTimeout(id);
+                    });
+              },
+            },
+            {
+              key: "isDataSaverModeOn",
+              value: function () {
+                return (
+                  "connection" in navigator &&
+                  !0 === navigator.connection.saveData
+                );
+              },
+            },
+            {
+              key: "supportsLinkPrefetch",
+              value: function () {
+                var elem = document.createElement("link");
+                return (
+                  elem.relList &&
+                  elem.relList.supports &&
+                  elem.relList.supports("prefetch") &&
+                  window.IntersectionObserver &&
+                  "isIntersecting" in IntersectionObserverEntry.prototype
+                );
+              },
+            },
+            {
+              key: "isSlowConnection",
+              value: function () {
+                return (
+                  "connection" in navigator &&
+                  "effectiveType" in navigator.connection &&
+                  ("2g" === navigator.connection.effectiveType ||
+                    "slow-2g" === navigator.connection.effectiveType)
+                );
+              },
+            },
+          ]),
+          RocketBrowserCompatibilityChecker
+        );
+      })();
+    </script>
+    <script id="rocket-preload-links-js-extra">
+      var RocketPreloadLinksConfig = {
+        excludeUris:
+          "\/white-label-php-development\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/",
+        usesTrailingSlash: "1",
+        imageExt:
+          "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php",
+        fileExt:
+          "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm",
+        siteUrl: "https:\/\/www.e2msolutions.com",
+        onHoverDelay: "100",
+        rateThrottle: "3",
+      };
+    </script>
+    <script id="rocket-preload-links-js-after">
+      (function () {
+        "use strict";
+        var r =
+            "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+              ? function (e) {
+                  return typeof e;
+                }
+              : function (e) {
+                  return e &&
+                    "function" == typeof Symbol &&
+                    e.constructor === Symbol &&
+                    e !== Symbol.prototype
+                    ? "symbol"
+                    : typeof e;
+                },
+          e = (function () {
+            function i(e, t) {
+              for (var n = 0; n < t.length; n++) {
+                var i = t[n];
+                (i.enumerable = i.enumerable || !1),
+                  (i.configurable = !0),
+                  "value" in i && (i.writable = !0),
+                  Object.defineProperty(e, i.key, i);
+              }
+            }
+            return function (e, t, n) {
+              return t && i(e.prototype, t), n && i(e, n), e;
+            };
+          })();
+        function i(e, t) {
+          if (!(e instanceof t))
+            throw new TypeError("Cannot call a class as a function");
+        }
+        var t = (function () {
+          function n(e, t) {
+            i(this, n),
+              (this.browser = e),
+              (this.config = t),
+              (this.options = this.browser.options),
+              (this.prefetched = new Set()),
+              (this.eventTime = null),
+              (this.threshold = 1111),
+              (this.numOnHover = 0);
+          }
+          return (
+            e(
+              n,
+              [
+                {
+                  key: "init",
+                  value: function () {
+                    !this.browser.supportsLinkPrefetch() ||
+                      this.browser.isDataSaverModeOn() ||
+                      this.browser.isSlowConnection() ||
+                      ((this.regex = {
+                        excludeUris: RegExp(this.config.excludeUris, "i"),
+                        images: RegExp(".(" + this.config.imageExt + ")$", "i"),
+                        fileExt: RegExp(".(" + this.config.fileExt + ")$", "i"),
+                      }),
+                      this._initListeners(this));
+                  },
+                },
+                {
+                  key: "_initListeners",
+                  value: function (e) {
+                    -1 < this.config.onHoverDelay &&
+                      document.addEventListener(
+                        "mouseover",
+                        e.listener.bind(e),
+                        e.listenerOptions
+                      ),
+                      document.addEventListener(
+                        "mousedown",
+                        e.listener.bind(e),
+                        e.listenerOptions
+                      ),
+                      document.addEventListener(
+                        "touchstart",
+                        e.listener.bind(e),
+                        e.listenerOptions
+                      );
+                  },
+                },
+                {
+                  key: "listener",
+                  value: function (e) {
+                    var t = e.target.closest("a"),
+                      n = this._prepareUrl(t);
+                    if (null !== n)
+                      switch (e.type) {
+                        case "mousedown":
+                        case "touchstart":
+                          this._addPrefetchLink(n);
+                          break;
+                        case "mouseover":
+                          this._earlyPrefetch(t, n, "mouseout");
+                      }
+                  },
+                },
+                {
+                  key: "_earlyPrefetch",
+                  value: function (t, e, n) {
+                    var i = this,
+                      r = setTimeout(function () {
+                        if (((r = null), 0 === i.numOnHover))
+                          setTimeout(function () {
+                            return (i.numOnHover = 0);
+                          }, 1e3);
+                        else if (i.numOnHover > i.config.rateThrottle) return;
+                        i.numOnHover++, i._addPrefetchLink(e);
+                      }, this.config.onHoverDelay);
+                    t.addEventListener(
+                      n,
+                      function e() {
+                        t.removeEventListener(n, e, { passive: !0 }),
+                          null !== r && (clearTimeout(r), (r = null));
+                      },
+                      { passive: !0 }
+                    );
+                  },
+                },
+                {
+                  key: "_addPrefetchLink",
+                  value: function (i) {
+                    return (
+                      this.prefetched.add(i.href),
+                      new Promise(function (e, t) {
+                        var n = document.createElement("link");
+                        (n.rel = "prefetch"),
+                          (n.href = i.href),
+                          (n.onload = e),
+                          (n.onerror = t),
+                          document.head.appendChild(n);
+                      }).catch(function () {})
+                    );
+                  },
+                },
+                {
+                  key: "_prepareUrl",
+                  value: function (e) {
+                    if (
+                      null === e ||
+                      "object" !== (void 0 === e ? "undefined" : r(e)) ||
+                      !1 in e ||
+                      -1 === ["http:", "https:"].indexOf(e.protocol)
+                    )
+                      return null;
+                    var t = e.href.substring(0, this.config.siteUrl.length),
+                      n = this._getPathname(e.href, t),
+                      i = {
+                        original: e.href,
+                        protocol: e.protocol,
+                        origin: t,
+                        pathname: n,
+                        href: t + n,
+                      };
+                    return this._isLinkOk(i) ? i : null;
+                  },
+                },
+                {
+                  key: "_getPathname",
+                  value: function (e, t) {
+                    var n = t ? e.substring(this.config.siteUrl.length) : e;
+                    return (
+                      n.startsWith("https://www.e2msolutions.com/") ||
+                        (n = "/" + n),
+                      this._shouldAddTrailingSlash(n) ? n + "/" : n
+                    );
+                  },
+                },
+                {
+                  key: "_shouldAddTrailingSlash",
+                  value: function (e) {
+                    return (
+                      this.config.usesTrailingSlash &&
+                      !e.endsWith("https://www.e2msolutions.com/") &&
+                      !this.regex.fileExt.test(e)
+                    );
+                  },
+                },
+                {
+                  key: "_isLinkOk",
+                  value: function (e) {
+                    return (
+                      null !== e &&
+                      "object" === (void 0 === e ? "undefined" : r(e)) &&
+                      !this.prefetched.has(e.href) &&
+                      e.origin === this.config.siteUrl &&
+                      -1 === e.href.indexOf("?") &&
+                      -1 === e.href.indexOf("#") &&
+                      !this.regex.excludeUris.test(e.href) &&
+                      !this.regex.images.test(e.href)
+                    );
+                  },
+                },
+              ],
+              [
+                {
+                  key: "run",
+                  value: function () {
+                    "undefined" != typeof RocketPreloadLinksConfig &&
+                      new n(
+                        new RocketBrowserCompatibilityChecker({
+                          capture: !0,
+                          passive: !0,
+                        }),
+                        RocketPreloadLinksConfig
+                      ).init();
+                  },
+                },
+              ]
+            ),
+            n
+          );
+        })();
+        t.run();
+      })();
+    </script>
+    <script
+      src="../wp-includes/js/comment-reply.min37ad.js?ver=6.0.1"
+      id="comment-reply-js"
+    ></script>
+    <script
+      src="../wp-includes/js/dist/vendor/regenerator-runtime.min3937.js?ver=0.13.9"
+      id="regenerator-runtime-js"
+    ></script>
+    <script
+      src="../wp-includes/js/dist/vendor/wp-polyfill.min2c7c.js?ver=3.15.0"
+      id="wp-polyfill-js"
+    ></script>
+    <script
+      src="../wp-includes/js/dist/dom-ready.min9aec.js?ver=d996b53411d1533a84951212ab6ac4ff"
+      id="wp-dom-ready-js"
+    ></script>
+    <script
+      src="../wp-includes/js/dist/hooks.mincbb5.js?ver=c6d64f2cb8f5c6bb49caca37f8828ce3"
+      id="wp-hooks-js"
+    ></script>
+    <script
+      src="../wp-includes/js/dist/i18n.min771a.js?ver=ebee46757c6a411e38fd079a7ac71d94"
+      id="wp-i18n-js"
+    ></script>
+    <script id="wp-i18n-js-after">
+      wp.i18n.setLocaleData({ "text direction\u0004ltr": ["ltr"] });
+    </script>
+    <script
+      src="../wp-includes/js/dist/a11y.min416f.js?ver=a38319d7ba46c6e60f7f9d4c371222c5"
+      id="wp-a11y-js"
+    ></script>
+    <script
+      defer="defer"
+      src="../wp-content/plugins/gravityforms/js/jquery.json.min6770.js?ver=2.6.5"
+      id="gform_json-js"
+    ></script>
+    <script id="gform_gravityforms-js-extra">
+      var gform_i18n = {
+        datepicker: {
+          days: {
+            monday: "Mon",
+            tuesday: "Tue",
+            wednesday: "Wed",
+            thursday: "Thu",
+            friday: "Fri",
+            saturday: "Sat",
+            sunday: "Sun",
+          },
+          months: {
+            january: "January",
+            february: "February",
+            march: "March",
+            april: "April",
+            may: "May",
+            june: "June",
+            july: "July",
+            august: "August",
+            september: "September",
+            october: "October",
+            november: "November",
+            december: "December",
+          },
+          firstDay: 1,
+          iconText: "Select date",
+        },
+      };
+      var gf_legacy_multi = [];
+      var gform_gravityforms = {
+        strings: {
+          invalid_file_extension:
+            "This type of file is not allowed. Must be one of the following:",
+          delete_file: "Delete this file",
+          in_progress: "in progress",
+          file_exceeds_limit: "File exceeds size limit",
+          illegal_extension: "This type of file is not allowed.",
+          max_reached: "Maximum number of files reached",
+          unknown_error:
+            "There was a problem while saving the file on the server",
+          currently_uploading: "Please wait for the uploading to complete",
+          cancel: "Cancel",
+          cancel_upload: "Cancel this upload",
+          cancelled: "Cancelled",
+        },
+        vars: {
+          images_url:
+            "https:\/\/www.e2msolutions.com\/wp-content\/plugins\/gravityforms\/images",
+        },
+      };
+      var gf_global = {
+        gf_currency_config: {
+          name: "U.S. Dollar",
+          symbol_left: "$",
+          symbol_right: "",
+          symbol_padding: "",
+          thousand_separator: ",",
+          decimal_separator: ".",
+          decimals: 2,
+          code: "USD",
+        },
+        base_url:
+          "https:\/\/www.e2msolutions.com\/wp-content\/plugins\/gravityforms",
+        number_formats: [],
+        spinnerUrl:
+          "https:\/\/www.e2msolutions.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg",
+        strings: {
+          newRowAdded: "New row added.",
+          rowRemoved: "Row removed",
+          formSaved:
+            "The form has been saved.  The content contains the link to return and complete the form.",
+        },
+      };
+      var gf_global = {
+        gf_currency_config: {
+          name: "U.S. Dollar",
+          symbol_left: "$",
+          symbol_right: "",
+          symbol_padding: "",
+          thousand_separator: ",",
+          decimal_separator: ".",
+          decimals: 2,
+          code: "USD",
+        },
+        base_url:
+          "https:\/\/www.e2msolutions.com\/wp-content\/plugins\/gravityforms",
+        number_formats: [],
+        spinnerUrl:
+          "https:\/\/www.e2msolutions.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg",
+        strings: {
+          newRowAdded: "New row added.",
+          rowRemoved: "Row removed",
+          formSaved:
+            "The form has been saved.  The content contains the link to return and complete the form.",
+        },
+      };
+    </script>
+    <script
+      defer="defer"
+      src="../wp-content/plugins/gravityforms/js/gravityforms.min6770.js?ver=2.6.5"
+      id="gform_gravityforms-js"
+    ></script>
+    <script
+      defer="defer"
+      src="../../www.google.com/recaptcha/api0655.js?hl=en&amp;ver=6.0.1#038;render=explicit"
+      id="gform_recaptcha-js"
+    ></script>
+    <script
+      defer="defer"
+      src="../wp-content/plugins/gravityforms/js/jquery.textareaCounter.plugin.min6770.js?ver=2.6.5"
+      id="gform_textarea_counter-js"
+    ></script>
+    <script
+      defer="defer"
+      src="../wp-content/plugins/gravityforms/js/placeholders.jquery.min6770.js?ver=2.6.5"
+      id="gform_placeholder-js"
+    ></script>
+    <script>
+      var swp_nonce = "92c5081fba";
+      var swpFloatBeforeContent = false;
+      var swp_ajax_url = "https://www.e2msolutions.com/wp-admin/admin-ajax.php";
+      var swp_post_id = "11720";
+      var swpClickTracking = false;
+    </script>
+    <script>
+      gform.initializeOnLoaded(function () {
+        jQuery(document).on(
+          "gform_post_render",
+          function (event, formId, currentPage) {
+            if (formId == 1) {
+              if (!jQuery("#input_1_10+.ginput_counter").length) {
+                jQuery("#input_1_10").textareaCount({
+                  maxCharacterSize: 10,
+                  originalStyle: "ginput_counter",
+                  truncate: true,
+                  errorStyle: "",
+                  displayFormat: "#input of #max max characters",
+                });
+                jQuery("#input_1_10")
+                  .next(".ginput_counter")
+                  .attr("aria-live", "polite");
+              }
+              if (typeof Placeholders != "undefined") {
+                Placeholders.enable();
+              }
+              jQuery(document).on(
+                "submit.gravityforms",
+                ".gform_wrapper form",
+                function (event) {
+                  jQuery("<input>")
+                    .attr("type", "hidden")
+                    .attr("name", "gf_zero_spam_key")
+                    .attr(
+                      "value",
+                      "vMSMuSRZwGelSvpK7FLhmbmzZIo1QJYSdHnnypSKXvzHNdBim9tTquhBDbcVbaeq"
+                    )
+                    .appendTo(jQuery(this));
+                }
+              );
+            }
+          }
+        );
+        jQuery(document).bind(
+          "gform_post_conditional_logic",
+          function (event, formId, fields, isInit) {}
+        );
+      });
+    </script>
+    <script>
+      gform.initializeOnLoaded(function () {
+        jQuery(document).trigger("gform_post_render", [1, 1]);
+      });
+    </script>
+    <script>
+      gform.initializeOnLoaded(function () {
+        jQuery(document).on(
+          "gform_post_render",
+          function (event, formId, currentPage) {
+            if (formId == 2) {
+              if (!jQuery("#input_2_10+.ginput_counter").length) {
+                jQuery("#input_2_10").textareaCount({
+                  maxCharacterSize: 10,
+                  originalStyle: "ginput_counter",
+                  truncate: true,
+                  errorStyle: "",
+                  displayFormat: "#input of #max max characters",
+                });
+                jQuery("#input_2_10")
+                  .next(".ginput_counter")
+                  .attr("aria-live", "polite");
+              }
+              if (typeof Placeholders != "undefined") {
+                Placeholders.enable();
+              }
+              jQuery(document).on(
+                "submit.gravityforms",
+                ".gform_wrapper form",
+                function (event) {
+                  jQuery("<input>")
+                    .attr("type", "hidden")
+                    .attr("name", "gf_zero_spam_key")
+                    .attr(
+                      "value",
+                      "vMSMuSRZwGelSvpK7FLhmbmzZIo1QJYSdHnnypSKXvzHNdBim9tTquhBDbcVbaeq"
+                    )
+                    .appendTo(jQuery(this));
+                }
+              );
+            }
+          }
+        );
+        jQuery(document).bind(
+          "gform_post_conditional_logic",
+          function (event, formId, fields, isInit) {}
+        );
+      });
+    </script>
+    <script>
+      gform.initializeOnLoaded(function () {
+        jQuery(document).trigger("gform_post_render", [2, 1]);
+      });
+    </script>
+    <script>
+      window.lazyLoadOptions = [
+        {
+          elements_selector:
+            "img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",
+          data_src: "lazy-src",
+          data_srcset: "lazy-srcset",
+          data_sizes: "lazy-sizes",
+          class_loading: "lazyloading",
+          class_loaded: "lazyloaded",
+          threshold: 300,
+          callback_loaded: function (element) {
+            if (
+              element.tagName === "IFRAME" &&
+              element.dataset.rocketLazyload == "fitvidscompatible"
+            ) {
+              if (element.classList.contains("lazyloaded")) {
+                if (typeof window.jQuery != "undefined") {
+                  if (jQuery.fn.fitVids) {
+                    jQuery(element).parent().fitVids();
+                  }
+                }
+              }
+            }
+          },
+        },
+        {
+          elements_selector: ".rocket-lazyload",
+          data_src: "lazy-src",
+          data_srcset: "lazy-srcset",
+          data_sizes: "lazy-sizes",
+          class_loading: "lazyloading",
+          class_loaded: "lazyloaded",
+          threshold: 300,
+        },
+      ];
+      window.addEventListener(
+        "LazyLoad::Initialized",
+        function (e) {
+          var lazyLoadInstance = e.detail.instance;
+          if (window.MutationObserver) {
+            var observer = new MutationObserver(function (mutations) {
+              var image_count = 0;
+              var iframe_count = 0;
+              var rocketlazy_count = 0;
+              mutations.forEach(function (mutation) {
+                for (var i = 0; i < mutation.addedNodes.length; i++) {
+                  if (
+                    typeof mutation.addedNodes[i].getElementsByTagName !==
+                    "function"
+                  ) {
+                    continue;
+                  }
+                  if (
+                    typeof mutation.addedNodes[i].getElementsByClassName !==
+                    "function"
+                  ) {
+                    continue;
+                  }
+                  images = mutation.addedNodes[i].getElementsByTagName("img");
+                  is_image = mutation.addedNodes[i].tagName == "IMG";
+                  iframes =
+                    mutation.addedNodes[i].getElementsByTagName("iframe");
+                  is_iframe = mutation.addedNodes[i].tagName == "IFRAME";
+                  rocket_lazy =
+                    mutation.addedNodes[i].getElementsByClassName(
+                      "rocket-lazyload"
+                    );
+                  image_count += images.length;
+                  iframe_count += iframes.length;
+                  rocketlazy_count += rocket_lazy.length;
+                  if (is_image) {
+                    image_count += 1;
+                  }
+                  if (is_iframe) {
+                    iframe_count += 1;
+                  }
+                }
+              });
+              if (image_count > 0 || iframe_count > 0 || rocketlazy_count > 0) {
+                lazyLoadInstance.update();
+              }
+            });
+            var b = document.getElementsByTagName("body")[0];
+            var config = { childList: !0, subtree: !0 };
+            observer.observe(b, config);
+          }
+        },
+        !1
+      );
+    </script>
+    <script
+      data-no-minify="1"
+      async
+      src="../wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"
+    ></script>
+    <script>
+      function lazyLoadThumb(e) {
+        var t =
+            '<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',
+          a = '<button class="play" aria-label="play Youtube video"></button>';
+        return t.replace("ID", e) + a;
+      }
+      function lazyLoadYoutubeIframe() {
+        var e = document.createElement("iframe"),
+          t = "ID?autoplay=1";
+        t +=
+          0 === this.parentNode.dataset.query.length
+            ? ""
+            : "&" + this.parentNode.dataset.query;
+        e.setAttribute("src", t.replace("ID", this.parentNode.dataset.src)),
+          e.setAttribute("frameborder", "0"),
+          e.setAttribute("allowfullscreen", "1"),
+          e.setAttribute(
+            "allow",
+            "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          ),
+          this.parentNode.parentNode.replaceChild(e, this.parentNode);
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        var e,
+          t,
+          p,
+          a = document.getElementsByClassName("rll-youtube-player");
+        for (t = 0; t < a.length; t++)
+          (e = document.createElement("div")),
+            e.setAttribute("data-id", a[t].dataset.id),
+            e.setAttribute("data-query", a[t].dataset.query),
+            e.setAttribute("data-src", a[t].dataset.src),
+            (e.innerHTML = lazyLoadThumb(a[t].dataset.id)),
+            a[t].appendChild(e),
+            (p = e.querySelector(".play")),
+            (p.onclick = lazyLoadYoutubeIframe);
+      });
+    </script>
+    <style></style>
+    <script></script>
+
+    <!-- Start of Async Drift Code -->
+
+    <!-- End of Async Drift Code -->
+    <script
+      data-account="syLwyQ7yBX"
+      src="../../cdn.userway.org/widget.js"
+    ></script>
+  </body>
+</html>
